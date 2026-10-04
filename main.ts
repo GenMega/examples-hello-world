@@ -15,7 +15,6 @@ export default {
     const cookies: Record<string, string> = {};
 
     function extractCookies(response: Response) {
-      // Deno fully supports getSetCookie() natively
       const setCookies = typeof response.headers.getSetCookie === 'function'
         ? response.headers.getSetCookie()
         : [];
